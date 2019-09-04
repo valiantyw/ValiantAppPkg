@@ -1,0 +1,39 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = vDiskApp
+  FILE_GUID                      = FD8014FE-E5F9-4cc1-A387-2885A4517180
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = vDiskAppEntryPoint
+
+[Sources]
+	vDiskApp.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  ValiantAppPkg/ValiantAppPkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  PcdLib
+  DevicePathLib
+  DxeServicesTableLib
+  PrintLib
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  BaseLib
+  BaseMemoryLib
+  MemoryAllocationLib
+  DebugLib
+
+[Protocols]
+  gEfiBlockIoProtocolGuid
+  gEfiDiskInfoProtocolGuid
+
+[Guids]
+  gEfiDiskInfoIdeInterfaceGuid
+  gEfiDiskInfoAhciInterfaceGuid
+  gEfiDiskInfoUsbInterfaceGuid
+  gEfiDiskInfoNvmeInterfaceGuid
